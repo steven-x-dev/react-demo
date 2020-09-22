@@ -1,5 +1,4 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
 import './Hello.css';
 
 const names = ['Shuwen', 'Yang', 'Xuanyi'];
