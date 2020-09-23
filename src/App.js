@@ -1,17 +1,31 @@
 import React from 'react';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
-import Hello from './components/Hello';
+import Hello from './components/hello/Hello';
 import Counters from './components/counter/Counters';
+import Form from './components/form/Form';
 
 function App() {
-  console.log('App')
   return (
-    <div className="App">
-      Hello world
-      <Hello />
-      <Counters />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        Hello world
+        <ul>
+          <li>
+            <Link to='/counter'>Counter</Link>
+          </li>
+          <li>
+            <Link to='/form'>Form</Link>
+          </li>
+        </ul>
+        <Switch>
+          <Route exact path='/' component={Hello} />
+          <Route path='/counter' component={Counters} />
+          <Route path='/form' component={Form} />
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 
